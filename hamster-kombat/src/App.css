@@ -1,0 +1,69 @@
+.App{
+  width: 290px;
+  height: 400px;
+  background-color: black;
+  border-radius: 10px;
+}
+.daily-reward{
+  width: 50px;
+  height: 40px;
+  background-color: rgb(79, 79, 79);
+  color: rgb(186, 186, 186);
+  font-size: 11px;
+  border-radius: 15px;
+  text-align: center;
+}
+.daily-cipher{
+  width: 50px;
+  height: 40px;
+  background-color: rgb(79, 79, 79);
+  color: rgb(186, 186, 186);
+  font-size: 11px;
+  border-radius: 15px;
+  text-align: center;
+}
+.daily-combo{
+  width: 50px;
+  height: 40px;
+  background-color: rgb(79, 79, 79);
+  color: rgb(186, 186, 186);
+  font-size: 11px;
+  border-radius: 15px;
+  text-align: center;
+}
+.combo{
+  display: flex;
+  gap: 10px;
+  margin-left: 55px;
+}
+.hamster{
+  width: 90%;
+  padding-top: 20px;
+  padding-left: 11px;
+  border-radius: 220px;
+}
+/* .fa-solid.fa-bolt{
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: rgb(255, 213, 0);
+} */
+
+.bar-list{
+  margin-top: 20px;
+  width: 287.5px;
+  height: 35px;
+  background-color: rgb(79, 79, 79);
+  border-radius: 20px;
+}
+.bar-list ul{
+  display: flex;
+  gap: 20px;
+  margin-left: -15px;
+}
+.bar-list li{
+  font-size: 11px;
+  list-style: none;
+  margin-top: 5px;
+  color: rgb(186, 186, 186);
+}
