@@ -6,7 +6,7 @@ import { faFish } from '@fortawesome/free-solid-svg-icons/faFish'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
 
-function Navigation(){
+function Navigation({selected}){
  return <>
     <div className='bar-list'>
         <ul>
@@ -17,25 +17,25 @@ function Navigation(){
             </Link>
           </li>
           <li>
-            <Link className='a-mine' to={'/mine'}>
+            <Link className={selected == 'mine' && 'active'} to={'/mine'}>
               <FontAwesomeIcon icon={faMoneyBillTrendUp}/>
               Mine
             </Link>
           </li>
           <li>
-            <Link to={'/friends'}>
+            <Link className={selected == 'friends' && 'active'} to={'/friends'}>
               <FontAwesomeIcon icon={faUserGroup}/>
               Friends
             </Link>
           </li>
           <li>
-            <Link to={'/earn'}>
+            <Link className={selected == 'earn' && 'active'} to={'/earn'}>
               <FontAwesomeIcon icon={faCoins}/>
               Earn
             </Link>
           </li>
           <li>
-            <Link to={'/airdrop'}>
+            <Link className={selected == 'airdrop' && 'active'} to={'/airdrop'}>
               <FontAwesomeIcon icon={faFish}/>
               Airdrop
             </Link>

@@ -41,10 +41,10 @@ function Mine(){
             </div>
             <div className="parent">        
                     {tasks.map((u)=>{
-                        return u.type == selectedType && <div className="card">{u.title}</div>
+                        return u.type == selectedType && <div className="card">{u.title}{u.level}</div>
                     })}
             </div>
-            <Navigation></Navigation>
+            <Navigation selected={'mine'}></Navigation>
         </div>
 
     </>

@@ -34,6 +34,6 @@
     text-align: center;
     margin-bottom: 10px;
   }
-  .a-mine{
-    color: #000;
+  .active{
+    color: rgb(138, 137, 137);
   }
