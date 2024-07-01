@@ -6,7 +6,7 @@ function Header(){
     return<>
         <div className="header-progress">
             Begginer - 1/3
-            <progress id="file" max="100" value="1"></progress>
+            <progress id="file" max="100" value="5"></progress>
             <div className="profit-per-hour">
                 <FontAwesomeIcon icon={faDollarSign}/>
                 <div className='coins'>                 

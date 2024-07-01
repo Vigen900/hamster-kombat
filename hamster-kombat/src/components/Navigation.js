@@ -4,30 +4,41 @@ import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup'
 import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
 import { faFish } from '@fortawesome/free-solid-svg-icons/faFish'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
 
 function Navigation(){
  return <>
     <div className='bar-list'>
         <ul>
           <li>
-            <FontAwesomeIcon icon={faDollarSign}/>
-            Exchange
+            <Link to={'/exchange'}>
+              <FontAwesomeIcon icon={faDollarSign}/>
+              Exchange
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faMoneyBillTrendUp}/>
-            Mine
+            <Link className='a-mine' to={'/mine'}>
+              <FontAwesomeIcon icon={faMoneyBillTrendUp}/>
+              Mine
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faUserGroup}/>
-            Friends
+            <Link to={'/friends'}>
+              <FontAwesomeIcon icon={faUserGroup}/>
+              Friends
+            </Link>
           </li>
           <li>
-          <FontAwesomeIcon icon={faCoins}/>
-            Earn
+            <Link to={'/earn'}>
+              <FontAwesomeIcon icon={faCoins}/>
+              Earn
+            </Link>
           </li>
           <li>
-            <FontAwesomeIcon icon={faFish}/>
-            Airdrop
+            <Link to={'/airdrop'}>
+              <FontAwesomeIcon icon={faFish}/>
+              Airdrop
+            </Link>
           </li>
         </ul>
       </div>
