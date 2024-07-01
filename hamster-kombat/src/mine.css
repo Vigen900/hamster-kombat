@@ -1,0 +1,39 @@
+
+  .card{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .parent{
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    min-height: 410px;
+  }
+  .type-of-market{
+    width: 287.5px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 10px;
+  }
+  .type-of-market ul{
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin-left: -30px;
+    margin-top: 5px;
+  }
+  .pr-team{
+    background-color: gray;
+  }
+  .total-coin{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .a-mine{
+    color: #000;
+  }

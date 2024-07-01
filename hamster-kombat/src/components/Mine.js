@@ -1,11 +1,22 @@
 import Navigation from './Navigation';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons/faDollarSign'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import "../mine.css"
+import {useState} from 'react'
 function Mine(){
     const tasks = [
-        {cost:1_000_000, img:'', title:'', profite:1_700, level:2}
+        {cost:1_000_000, img:'', title:'Ceo', profite:1_700, level:2, type:'Pr&Team'},
+        {cost:1_000_000, img:'', title:'Market', profite:1_700, level:2, type:'Market'},
+        {cost:1_000_000, img:'', title:'Legal', profite:1_700, level:2, type:'Legal'},
+        {cost:1_000_000, img:'', title:'Specialist', profite:1_700, level:2, type:'Specialist'},
+        {cost:1_000_000, img:'', title:'Specialist', profite:1_700, level:2, type:'Specialist'},
+        {cost:1_000_000, img:'', title:'Marketing', profite:1_700, level:2, type:'Pr&Team'},
     ]
+    
+    const [selectedType, setSelectedType] = useState('Pr&Team')
+    function handleChange(type){
+        setSelectedType(type)
+    }
     return<>
         <div className="App">
             <div className="total-coin">
@@ -14,51 +25,24 @@ function Mine(){
             </div>
             <div className="type-of-market">
                 <ul>
-                    <li className="pr-team">
+                    <li className="pr-team" onClick={()=>{handleChange('Pr&Team')}}>
                         PR&Team
                     </li>
-                    <li>
+                    <li onClick={()=>{handleChange('Market')}}>
                         Market
                     </li>
-                    <li>
+                    <li onClick={()=>{handleChange('Legal')}}>
                         Legal
                     </li>
-                    <li>
+                    <li onClick={()=>{handleChange('Specialist')}}>
                         Specialist
                     </li>
                 </ul>
             </div>
-            <div className="parent">
-                <div className="right">
-                    <div className="ceo">
-                        Ceo
-                        {tasks.level}
-                    </div>
-                    <div className="it-team">
-                        IT-team
-                    </div>
-                    <div className="fishbook">
-                        FishBook
-                    </div>
-                    <div className="x">
-                        X
-                    </div>
-                </div>
-                <div className="left">
-                    <div className="marketing">
-                        Marketing
-                    </div>
-                    <div className="support">
-                        Support
-                    </div>
-                    <div className="fish-coin">
-                        FishCoin
-                    </div>
-                    <div className="telegram">
-                        Telegram
-                    </div>
-                        
-                </div>
+            <div className="parent">        
+                    {tasks.map((u)=>{
+                        return u.type == selectedType && <div className="card">{u.title}</div>
+                    })}
             </div>
             <Navigation></Navigation>
         </div>
