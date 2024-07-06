@@ -1,5 +1,7 @@
 import Navigation from './Navigation';
 import '../friends.css'
+import { faClone } from '@fortawesome/free-solid-svg-icons/faClone'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Friends(){
     const friends = [
@@ -11,10 +13,22 @@ function Friends(){
     
     return<>
         <div className="App">
-        <div className="parent">        
-                    {friends.map((u)=>{
-                        return <div className="card">{u.name} <br/>{u.progress} <br/>{u.profite}</div>
-                    })}
+            <b>List of you`r friends</b>
+            <div className="friends-parent">        
+                {friends.map((u)=>{
+                    return <div className="friends-card">
+                                <span className='name'>{u.name}</span>
+                                <br/>
+                                {u.progress} 
+                                <br/>
+                                {u.profite}
+                            </div>
+                            
+                })}
+                <div>
+                    <button className='friends-invite'>Invite a friend</button>
+                    <a className='copy-link' href=''><FontAwesomeIcon className='faClone' icon={faClone}/></a>
+                </div>
             </div>
             <Navigation selected={'friends'}></Navigation>
         </div>

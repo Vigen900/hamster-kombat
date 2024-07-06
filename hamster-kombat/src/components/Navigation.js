@@ -11,31 +11,31 @@ function Navigation({selected}){
     <div className='bar-list'>
         <ul>
           <li>
-            <Link to={'/exchange'}>
+            <Link to={'/'}>
               <FontAwesomeIcon icon={faDollarSign}/>
               Exchange
             </Link>
           </li>
           <li>
-            <Link className={selected == 'mine' && 'active'} to={'/mine'}>
+            <Link className={selected == 'mine' ? 'active' : undefined} to={'/mine'}>
               <FontAwesomeIcon icon={faMoneyBillTrendUp}/>
               Mine
             </Link>
           </li>
           <li>
-            <Link className={selected == 'friends' && 'active'} to={'/friends'}>
+            <Link className={selected == 'friends' ? 'active' : undefined} to={'/friends'}>
               <FontAwesomeIcon icon={faUserGroup}/>
               Friends
             </Link>
           </li>
           <li>
-            <Link className={selected == 'earn' && 'active'} to={'/earn'}>
+            <Link className={selected == 'earn' ? 'active' : undefined} to={'/earn'}>
               <FontAwesomeIcon icon={faCoins}/>
               Earn
             </Link>
           </li>
           <li>
-            <Link className={selected == 'airdrop' && 'active'} to={'/airdrop'}>
+            <Link className={selected == 'airdrop' ? 'active' : undefined} to={'/airdrop'}>
               <FontAwesomeIcon icon={faFish}/>
               Airdrop
             </Link>
