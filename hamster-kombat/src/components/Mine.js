@@ -46,7 +46,6 @@ function Mine(){
             </div>
             <Navigation selected={'mine'}></Navigation>
         </div>
-
     </>
 }
 
