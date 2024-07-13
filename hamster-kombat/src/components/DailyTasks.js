@@ -4,7 +4,7 @@ import { faDiceThree } from '@fortawesome/free-solid-svg-icons/faDiceThree'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons/faDollarSign'
 
-function DailyTasks(){
+function DailyTasks({profite}){
     return<>
         <div className='combo'>
             <div className='daily-reward'>
@@ -22,7 +22,7 @@ function DailyTasks(){
         </div>
         <div className='total-coins'>
             <FontAwesomeIcon className='faDollarSign' icon={faDollarSign}/>
-            <b>20.000.000</b>
+            <b>{profite}</b>
         </div>
     </>
 }
