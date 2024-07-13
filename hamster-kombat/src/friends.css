@@ -8,6 +8,7 @@
     padding-top: 5px;
     justify-content: center;
     gap: 30px;
+    padding-left: 10px;
 }
 .friends-card{
     width: 250px;
@@ -21,14 +22,15 @@
     width: 180px;
     height: 40px;
     border-radius: 7px;
-    margin-left: 50px;
+    margin-left: 40px;
     background-color: blue;
     color: white;
+    border: none;
 }
 .copy-link{
-    font-size: 23px;
+    font-size: 25px;
     margin-left: 5px;
-    border: 1px solid black;
-    background-color: blue;
-    
+}
+.faClone{
+    color: blue;
 }

@@ -1,0 +1,30 @@
+.parent{
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    min-height: 420px;
+}
+.App{
+    color: azure;
+    background-size: cover;
+    background-image: url('https://www.shutterstock.com/image-illustration/colorful-coral-reef-under-sea-600nw-2043152465.jpg');
+}
+.gold-coin{
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    border-radius: 50px;
+}
+.coint-text{
+    padding-bottom: 160px;
+}
+.daily-tasks{
+    padding-left: 30px;
+}
+.faCalendar{
+    color: gold;
+    font-size: 20px;
+    padding: 20px 30px 40px;
+}
