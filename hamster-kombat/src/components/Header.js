@@ -2,7 +2,7 @@ import { faDollarSign } from '@fortawesome/free-solid-svg-icons/faDollarSign'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear'
-function Header(){
+function Header({profitePerHour}){
     return<>
         <div className="header-progress">
             Begginer - 1/3
@@ -11,7 +11,7 @@ function Header(){
                 <FontAwesomeIcon icon={faDollarSign}/>
                 <div className='coins'>                 
                     <FontAwesomeIcon icon={faCoins}/>
-                    <b>+1.2M</b>
+                    <b>{profitePerHour}</b>
                 </div>
                 <FontAwesomeIcon icon={faGear}/>
             </div>
