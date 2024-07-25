@@ -2,11 +2,12 @@ import { faDollarSign } from '@fortawesome/free-solid-svg-icons/faDollarSign'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear'
-function Header({profitePerHour}){
+function Header({profitePerHour, level}){
+    const levels = {1:'Begginer', 2:'Pro', 3:'Legendary'}
     return<>
         <div className="header-progress">
-            Begginer - 1/3
-            <progress id="file" max="100" value="5"></progress>
+            <b>{levels[level]}</b>
+            <progress id="file" max="100" value={level == 1 ? 20 : level == 2 ? 55 : 100}></progress>
             <div className="profit-per-hour">
                 <FontAwesomeIcon icon={faDollarSign}/>
                 <div className='coins'>                 

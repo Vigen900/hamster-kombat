@@ -2,9 +2,10 @@ import Navigation from './Navigation';
 import { faDollarSign } from '@fortawesome/free-solid-svg-icons/faDollarSign'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../mine.css"
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 function Mine(){
     const [tasks, setTasks] = useState([])
+    useEffect(()=>{
         fetch('http://localhost:3001/cards').then((data)=>{
             return data.json()
         })
@@ -13,6 +14,7 @@ function Mine(){
         }).catch((error)=>{
             console.log(error)
         })
+    },[])
     
     const [selectedType, setSelectedType] = useState('Pr&Team')
     function handleChange(type){
