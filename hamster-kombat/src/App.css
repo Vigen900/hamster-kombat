@@ -43,6 +43,7 @@
   margin-top: 30px;
   border-radius: 220px;
   border: 7px solid red;
+  cursor: pointer;
 }
 .hamster:active{
   opacity: 0.9;

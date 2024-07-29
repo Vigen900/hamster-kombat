@@ -8,6 +8,10 @@ function Mine({selected}){
     const [tasks, setTasks] = useState([])
     const [userData, setUserData] = useState({})
     useEffect(()=>{
+        getCards()
+    },[])
+    
+    function getCards(){
         const cardRequest = fetch('http://localhost:3001/cards').then((data)=>{
             return data.json()
         })
@@ -24,11 +28,16 @@ function Mine({selected}){
         }).catch((error)=>{
             console.log(error)
         })
-    },[])
+    }
     
     const [selectedType, setSelectedType] = useState('Pr&Team')
     function handleChange(type){
         setSelectedType(type)
+    }
+    function upgrateCard(cardId){
+        fetch(`http://localhost:3001/cards/66890cb072ef7a31a76e0645/${cardId}`).then(()=>{
+            getCards()
+        })
     }
 
     function transformCards(cards, userData){
@@ -65,16 +74,16 @@ function Mine({selected}){
             </div>
             <div className="type-of-market">
                 <ul>
-                    <li className={selected == 'Pr&Team'}  onClick={()=>{handleChange('Pr&Team')}}>
+                    <li className={selectedType == 'Pr&Team' ? 'active' : undefined}  onClick={()=>{handleChange('Pr&Team')}}>
                         PR&Team
                     </li>
-                    <li className={selected == 'Market'} onClick={()=>{handleChange('Market')}}>
+                    <li className={selectedType == 'Market' ? 'active' : undefined} onClick={()=>{handleChange('Market')}}>
                         Market
                     </li>
-                    <li onClick={()=>{handleChange('Legal')}}>
+                    <li className={selectedType == 'Legal' ? 'active' : undefined} onClick={()=>{handleChange('Legal')}}>
                         Legal
                     </li>
-                    <li onClick={()=>{handleChange('Specialist')}}>
+                    <li className={selectedType == 'Specialist' ? 'active' : undefined} onClick={()=>{handleChange('Specialist')}}>
                         Specialist
                     </li>
                 </ul>
@@ -87,6 +96,7 @@ function Mine({selected}){
                             Level: {u.level.level} <br/>
                             Profite: {u.level.profite} <br/>
                             Cost: {u.level.cost}
+                            <button onClick = {(()=> upgrateCard(u.id))}>Upgrade</button>
                         </div>
                     )})}
             </div>
