@@ -2,26 +2,36 @@ import Navigation from './Navigation';
 import '../friends.css'
 import { faClone } from '@fortawesome/free-solid-svg-icons/faClone'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useEffect, useState } from 'react';
 
 function Friends(){
-    const friends = [
-        {name:'Gagik', profite:280_000, progress:'silver', profitePerHour:25_000},
-        {name:'Jack', profite:280_000, progress:'silver', profitePerHour:25_000},
-        {name:'Armen', profite:280_000, progress:'silver', profitePerHour:25_000},
-        {name:'Bob', profite:280_000, progress:'silver', profitePerHour:25_000}
-    ]
+    const [newfriends, setNewFriends] = useState([])
+        useEffect(()=>{
+            fetch('http://localhost:3001/users/66890cb072ef7a31a76e0645/friends')
+            .then((data)=>{
+                return data.json()
+            })
+            .then((data)=>{
+                console.log(data)
+                setNewFriends(data)
+            })
+            .catch((error)=>{
+                console.error('error', error);
+            })
+        },[])
     
     return<>
         <div className="App">
-            <b>List of you`r friends</b>
+        <b>List of you`r friends</b>
             <div className="friends-parent">        
-                {friends.map((u)=>{
-                    return <div className="friends-card">
-                                <span className='name'>{u.name}</span>
+                {newfriends.map((u)=>{
+                    return <div className="friends-card">                      
                                 <br/>
-                                {u.progress} 
+                                {u.users} 
                                 <br/>
-                                {u.profite}
+                                {u.profitePerHour}
+                                <br/>
+                                {u.progress}
                             </div>
                             
                 })}

@@ -3,7 +3,7 @@ import { faDollarSign } from '@fortawesome/free-solid-svg-icons/faDollarSign'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "../mine.css"
 import {useState, useEffect} from 'react'
-function Mine({selected}){
+function Mine(){
     const [cards, setCards] = useState([])
     const [tasks, setTasks] = useState([])
     const [userData, setUserData] = useState({})
